@@ -50,22 +50,3 @@ MAL1/
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)
 
 ---
-
-## Kom i gang
-
-```bash
-# Klon repo
-git clone https://github.com/YounasSaid/MAL1.git
-
-# Installer afhængigheder (Anaconda anbefales)
-pip install numpy pandas scikit-learn matplotlib seaborn openpyxl
-
-# Åbn notebook
-jupyter notebook "Aflevering 1/1. Car prices.ipynb"
-```
-
-> **Bemærk:** `car_prices.xlsx` er ikke inkluderet i repo'et (privat datasæt). Placer filen i `Aflevering 1/` før du kører notebooken.
-
----
-
-*Younas Khalid Said · VIA University College · 2025*
