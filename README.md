@@ -19,6 +19,9 @@ MAL1/
 │       ├── 2. Candidate Test 2022 I.ipynb
 │       ├── EKSAMENSFORKLARING.md
 │       └── image-1.png
+├── ExoPlanetsAflevering/  # Aflevering 3 – Detecting Exoplanets
+│   ├── 4. Preprocessing and Feature Engineering - Detecting Exoplanets.ipynb
+│   └── EKSAMENSFORKLARING.md
 ├── Lektions noter/
 └── README.md
 ```
@@ -69,6 +72,32 @@ MAL1/
 - **Random Forest:** 94% accuracy (bedste model)
 - **Gradient Boosted:** 88% accuracy
 - Modellen identificerer kandidater der politisk matcher et andet parti bedre
+
+---
+
+## Aflevering 3 – Detecting Exoplanets
+
+**Emne:** Preprocessing og feature engineering på NASA Kepler-data for at klassificere exoplaneter
+
+**Dataset:** 9.564 observationer · 49 features · 3 dispositioner (FALSE POSITIVE, CANDIDATE, CONFIRMED)
+
+### Hvad er løst
+
+| Del | Indhold | Metode |
+|-----|---------|--------|
+| **Explore** | Missing values, outliers | IQR · isnull · countplot |
+| **Feature Engineering** | Drop irrelevante kolonner, log-transform, encoding | np.log1p · StandardScaler |
+| **Split** | Stratified train/test split | train_test_split (stratify) |
+| **Modeller** | Hyperparameter tuning | GridSearchCV · Logistic Regression · SVM |
+| **Evaluering** | Confusion matrix, precision/recall | classification_report |
+
+### Teknikker
+- Drop af 100% missing kolonner (`koi_teq_err1`, `koi_teq_err2`)
+- Log-transformation af skæve features (OrbitalPeriod, TransitDepth, m.fl.)
+- Binær target: FALSE POSITIVE vs. (CANDIDATE ∪ CONFIRMED)
+- GridSearchCV over `C` for Logistic Regression og over `C`/`kernel` for SVM
+
+---
 
 ### Teknologier
 
