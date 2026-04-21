@@ -22,6 +22,9 @@ MAL1/
 ├── ExoPlanetsAflevering/  # Aflevering 3 – Detecting Exoplanets
 │   ├── 4. Preprocessing and Feature Engineering - Detecting Exoplanets.ipynb
 │   └── EKSAMENSFORKLARING.md
+├── Sentiment Analysis aflevering/  # Aflevering 4 – Sentiment Analysis
+│   ├── 5. Neural networks I - Sentiment analysis.ipynb
+│   └── EKSAMENSFORKLARING.md
 ├── Lektions noter/
 └── README.md
 ```
@@ -96,6 +99,31 @@ MAL1/
 - Log-transformation af skæve features (OrbitalPeriod, TransitDepth, m.fl.)
 - Binær target: FALSE POSITIVE vs. (CANDIDATE ∪ CONFIRMED)
 - GridSearchCV over `C` for Logistic Regression og over `C`/`kernel` for SVM
+
+---
+
+## Aflevering 4 – Sentiment Analysis (Neural Networks)
+
+**Emne:** Sentimentklassifikation af IMDb-filmanmeldelser med et neuralt netværk
+
+**Dataset:** 25.000 reviews · binær label (positive / negative)
+
+### Hvad er løst
+
+| Del | Indhold | Metode |
+|-----|---------|--------|
+| **(a)** | Train/val/test split + tekst til tal | CountVectorizer (BoW, 10.000 ord) |
+| **(b)** | Udforsk repræsentationen | One-hot, count-vektor, sparse matrix |
+| **(c)** | Træn neuralt netværk, tune hyperparametre | MLPClassifier · early stopping · alpha-tuning |
+| **(d)** | Evaluer på test-sættet | Confusion matrix · classification report |
+| **(e)** | Klassificér egne sætninger | predict_proba |
+
+### Nøgleresultater
+
+- **Bedste model:** MLP med 64 neuroner, alpha=0.0001
+- **Validation accuracy:** 88.96%
+- **Test accuracy:** 87.78%
+- **Precision / Recall / F1:** ≈ 0.88 for begge klasser
 
 ---
 
