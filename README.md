@@ -25,6 +25,9 @@ MAL1/
 ├── Sentiment Analysis aflevering/  # Aflevering 4 – Sentiment Analysis
 │   ├── 5. Neural networks I - Sentiment analysis.ipynb
 │   └── EKSAMENSFORKLARING.md
+├── 6 Candidates (II)/      # Aflevering 5 – Candidate Test 2022 (Part 2)
+│   ├── 6. Candidate Test 2022 II.ipynb
+│   └── EKSAMENSFORKLARING.md
 ├── Lektions noter/
 └── README.md
 ```
@@ -124,6 +127,32 @@ MAL1/
 - **Validation accuracy:** 88.96%
 - **Test accuracy:** 87.78%
 - **Precision / Recall / F1:** ≈ 0.88 for begge klasser
+
+---
+
+## Aflevering 5 – Candidate Test 2022 Part 2 (Clustering & PCA)
+
+**Emne:** Unsupervised analyse af politiske holdninger på tværs af 14 partier
+
+**Dataset:** 867 kandidater · 49 spørgsmål · 169 valgte folketingsmedlemmer
+
+### Hvad er løst
+
+| Del | Indhold | Metode |
+|-----|---------|--------|
+| **PCA** | Vigtigste akser i besvarelserne | StandardScaler · PCA · loadings |
+| **Partianalyse** | Gennemsnitlige placeringer per spørgsmål | groupby · heatmap · bar plots |
+| **Clustering** | Find naturlige holdningsklynger | K-Means · Hierarchical (Ward) · DBSCAN |
+| **Politisk landskab** | Enighed/uenighed blandt valgte | Pearson-korrelation · intern partienighed |
+
+### Nøgleresultater
+
+- **PC1 + PC2 forklarer 52%** af variationen (PC1 = 41,7%)
+- **Bedste k ifølge silhouette**: k=2 — naturlig opdeling er **færre** klynger end 14 partier
+- **Mest enige par**: Pernille Vermund & Peter Seier Christensen (Nye Borgerlige) r=0.996
+- **Mest uenige par**: Jens Meilvang (LA) ↔ Jette Gottlieb (Æ) r=-0.714
+- **Mest sammenhængende parti**: Nye Borgerlige (intern r=0.953)
+- **Mest spredte parti**: Moderaterne (intern r=0.546)
 
 ---
 
